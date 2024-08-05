@@ -1,7 +1,27 @@
-import React from 'react'
-import "./contact.css"
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import "./contact.css";
 
 const Contact = () => {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_1okz5js", "template_dgh6qg7", form.current, {
+        publicKey: "-KEXMlfzM9eK0c6gi",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
   return (
     <section className="contact section" id="contact">
       <h2 className="section__title">Get In Touch</h2>
@@ -65,12 +85,12 @@ const Contact = () => {
         <div className="contact__content">
           <h3 className="contact__title">Send me your message</h3>
 
-          <form className="contact__form">
+          <form className="contact__form" ref={form} onSubmit={sendEmail}>
             <div className="contact__form-div">
               <label className="contact__form-tag">Name</label>
               <input
                 type="text"
-                name=""
+                name="name"
                 className="contact__form-input"
                 placeholder="Enter Your Name"
               />
@@ -80,7 +100,7 @@ const Contact = () => {
               <label className="contact__form-tag">Email</label>
               <input
                 type="text"
-                name=""
+                name="email"
                 className="contact__form-input"
                 placeholder="Enter your Email"
               />
@@ -103,6 +123,6 @@ const Contact = () => {
       </div>
     </section>
   );
-}
+};
 
-export default Contact
+export default Contact;
