@@ -4,7 +4,7 @@ import Foody from "../../assets/Foody.png";
 import Nike from "../../assets/Nike.png";
 import Hope from "../../assets/Hope.png";
 import PopMart from "../../assets/PopMart.png";
-import todo from "../../assets/todp.png"
+import todo from "../../assets/todo.png"
 
 
 export const projectsData = [
