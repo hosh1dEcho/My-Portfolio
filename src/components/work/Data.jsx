@@ -4,6 +4,7 @@ import Foody from "../../assets/Foody.png";
 import Nike from "../../assets/Nike.png";
 import Hope from "../../assets/Hope.png";
 import PopMart from "../../assets/PopMart.png";
+import todo from "../../assets/todp.png"
 
 
 export const projectsData = [
@@ -60,6 +61,15 @@ export const projectsData = [
     description:
       "An engaging online store for collectible toys and figures, featuring vibrant visuals and comprehensive product information to enhance the shopping experience.",
     href: "https://www.behance.net/gallery/203406883/CRYBABY-(PopMart)",
+  },
+  {
+    id: 7,
+    image: todo,
+    title: "To-Do-List",
+    category: "Frontend",
+    description:
+      "A simple and user-friendly to-do list application with real-time updates and a clean interface.",
+    href: "https://to-do-amber-rho.vercel.app/",
   },
 ];
 
